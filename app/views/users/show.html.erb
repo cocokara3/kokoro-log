@@ -1,0 +1,7 @@
+<h1>マイページ</h1>
+<p>こんにちは、<%= @user.name %> さん！</p>
+<p>あなたのメールアドレス: <%= @user.email %></p>
+
+<hr>
+
+<%= link_to "ログアウト", logout_path, data: { turbo_method: :delete } %>

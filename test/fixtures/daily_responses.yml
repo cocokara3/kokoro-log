@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  mood_score: 1
+  answer_text: MyText
+  logged_on: 2026-03-09
+
+two:
+  user: two
+  mood_score: 1
+  answer_text: MyText
+  logged_on: 2026-03-09

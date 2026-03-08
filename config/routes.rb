@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get "users/new"
+  get "users/create"
+  get "users/show"
+  # ログイン関係
+  get    'login',  to: 'sessions#new'     # ログイン画面
+  post   'login',  to: 'sessions#create'  # ログイン処理
+  delete 'logout', to: 'sessions#destroy' # ログアウト
+
+  # ユーザー登録関係
+  resources :users, only: [:new, :create, :show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
