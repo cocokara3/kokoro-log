@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "daily_responses/new"
+  get "daily_responses/create"
+  get "daily_responses/index"
   get "users/new"
   get "users/create"
   get "users/show"
@@ -9,6 +12,8 @@ Rails.application.routes.draw do
 
   # ユーザー登録関係
   resources :users, only: [:new, :create, :show]
+  # 日記関係
+  resources :daily_responses, only: [:new, :create, :index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -1,0 +1,2 @@
+module DailyResponsesHelper
+end
