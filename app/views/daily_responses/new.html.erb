@@ -1,2 +1,24 @@
-<h1>DailyResponses#new</h1>
-<p>Find me in app/views/daily_responses/new.html.erb</p>
+<h1>今日の気分はどう？</h1>
+
+<%= form_with model: @daily_response, local: true do |f| %>
+  <div>
+    <%= f.label :mood_score, "今の気分（1:最悪 〜 5:最高）" %><br>
+    <% (1..5).each do |score| %>
+      <%= f.radio_button :mood_score, score %>
+      <%= f.label "mood_score_#{score}", score %>
+    <% end %>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <%= f.label :answer_text, "今の気持ちを一言（AIへのメッセージ）" %><br>
+    <%= f.text_area :answer_text, placeholder: "今日はこんなことがあったよ..." %>
+  </div>
+
+  <%= f.hidden_field :logged_on, value: Date.today %>
+
+  <div style="margin-top: 20px;">
+    <%= f.submit "記録する" %>
+  </div>
+<% end %>
+
+<%= link_to "マイページへ戻る", user_path(current_user) %>

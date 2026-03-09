@@ -9,7 +9,7 @@ class DailyResponsesController < ApplicationController
   def create
     @daily_response = current_user.daily_responses.new(daily_response_params)
     if @daily_response.save
-      redirect_to daily_responses_path, notice: "記録しました！"
+      redirect_to daily_responses_path, notice: "日々の記録を保存しました！"
     else
       render :new, status: :unprocessable_entity
     end
